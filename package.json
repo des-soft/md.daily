@@ -1,0 +1,24 @@
+{
+  "name": "md.daily",
+  "version": "0.0.1",
+  "description": "for daily store",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node src/test.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/des-soft/md.daily.git"
+  },
+  "keywords": [
+    "for",
+    "daily",
+    "store"
+  ],
+  "author": "eczn & deswan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/des-soft/md.daily/issues"
+  },
+  "homepage": "https://github.com/des-soft/md.daily#readme"
+}
