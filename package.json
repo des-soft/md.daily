@@ -1,6 +1,6 @@
 {
   "name": "md.daily",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "for daily store",
   "main": "src/index.js",
   "scripts": {
@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/des-soft/md.daily/issues"
   },
-  "homepage": "https://github.com/des-soft/md.daily#readme"
+  "homepage": "https://github.com/des-soft/md.daily#readme",
+  "dependencies": {
+    "chokidar": "^2.0.3",
+    "md5": "^2.2.1",
+    "then-fs": "^2.0.0"
+  }
 }
