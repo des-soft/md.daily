@@ -3,7 +3,7 @@
 
 # 日记 md.daily 
 
-> 私人用
+> 私人用 
 
 # 格式 Format  
 
@@ -76,6 +76,31 @@ Meta 中目前可以使用的字段
 
 > 注: 带 * 的为必填字段
 
+
+# 在 JavaScript 中使用 Daily 
+
+先安装 
+
+``` bash 
+$ npm i md.daily 
+``` 
+
+使用方法 
+
+``` js
+const Daily = require('md.daily')
+
+let daily = new Daily('path/to/your/daily.md'); 
+
+daily.getData().then(daily => {
+    // 此处的 daily 和外面的 daily 是同一个引用 
+    console.log(daily.meta); 
+}).catch(err => {
+    console.log(err); 
+}); 
+```
+
+更多使用，参见 [使用法](./src/README.md)
 
 # LICENSE 
 
