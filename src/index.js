@@ -58,11 +58,17 @@ class Daily extends MetaProxy {
             this.emit('change', this); 
         }); 
 
+        // 当文件被删除
+        // 被动的取消绑定
+        this.watcher.on('unlink', path => {
+            this.endWatch(); 
+        }); 
+
         return this; 
     }
 
     /**
-     * @description 取消绑定
+     * @description 主动取消绑定
      * @returns { Daily } 链式调用 
      */
     endWatch() {
