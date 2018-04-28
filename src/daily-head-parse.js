@@ -1,3 +1,8 @@
+/**
+ * @description 将字符串格式化成对象 (daily 格式)
+ * @param { String } text 
+ * @returns { Object } 
+ */
 module.exports = text => (
     text.slice(1, -1)
     .split('\n')

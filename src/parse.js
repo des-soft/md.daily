@@ -4,7 +4,7 @@ const beauty = require('./beauty')
 module.exports = parse; 
 
 /**
- * @description 文件的解析器
+ * @description 文件的解析器 (将文件 parse 成特定对象)
  * @param { String } text 
  * @returns { { meta: Object, content: String, text: String } } parse 结果
  */
@@ -22,20 +22,21 @@ function parse(text, sp = ';;;;;;'){
             return parse(text, '------'); 
         }
     } else {
-        let [ head_text, ...contents ] = arr;
-        let content = contents.join(sp); 
+        let [ head_text, ...remains ] = arr;
+        let body = remains.join(sp); 
 
         let meta = getMetaFrom(head_text); 
-        // meta 还需要预处理一下， 比如 tags 字段得转化成数组 
 
         return {
+            // meta 还需要预处理 (美化) 一下， 比如 tags 字段得转化成数组 
             meta: beauty(meta), 
-            content: content,
+            content: body,
             text: text
         }
     }
 }
 
+// 选择器 
 let selector_table = {
     json: e => JSON.parse(e),
     daily: dailyHeadParse,

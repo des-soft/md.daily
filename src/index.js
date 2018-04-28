@@ -12,8 +12,8 @@ class Daily extends MetaProxy {
     constructor(file_path) {
         super(); 
 
+        // 参数初始化
         this.file_path = file_path; 
-
         this.data = null; 
     }
 
@@ -35,7 +35,7 @@ class Daily extends MetaProxy {
 
     /**
      * @description 从磁盘中读取 file_path 返回 Promise 
-     * @returns { Promise<String> } 
+     * @returns { Promise<Object> } 文章经过 parse 的结果 
      */
     read() {
         return fs.readFile(this.file_path)
