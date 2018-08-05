@@ -88,7 +88,7 @@ $ npm i md.daily
 使用方法 
 
 ``` js
-const Daily = require('md.daily')
+const { Daily } = require('md.daily'); 
 
 let daily = new Daily('path/to/your/daily.md'); 
 
@@ -101,6 +101,30 @@ daily.getData().then(daily => {
 ```
 
 更多使用，参见 [使用法](./src/README.md)
+
+
+# 目录里的 Daily 
+
+在实际应用里，更多的情况是 Daily 都放在目录里，为此引入 Pool 类针对这种情况进行编程。 
+
+``` js
+const { Pool } = require('md.daily'); 
+
+const my_daily_diretory = '/home/eczn/dailys'; 
+const pool = new Pool(my_daily_diretory); 
+
+// 拉取文件夹内部全部 dailys 
+pool.pull().then(console.log); 
+```
+
+除却 `pull()` 之外，Pool 还实现了很多特性：
+
+1. Pool 内部有它自己的数据结构，存储着 文件夹下 `.md` 文件的 Daily 实例。 
+2. Pool 会监听文件夹，随时更新上面提到的数据结构 (添加 / 删除)
+3. Pool 继承自 EventEmitter，有三个事件：`add` `unlink` `change` 参数是对应的 Daily 实例 
+
+更多请参考源码实现，或者函数签名。 
+
 
 # LICENSE 
 

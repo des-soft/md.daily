@@ -1,3 +1,4 @@
 module.exports = {
-    Daily: require('./Daily')
+    Daily: require('./Daily'), 
+    Pool: require('./Pool')
 }
