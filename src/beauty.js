@@ -9,7 +9,7 @@ module.exports = function beauty(obj) {
 	// 预设 
 	obj.tags   =  obj.tags   || ''; 
 	obj.title  =  obj.title  || '未定义标题'; 
-	obj.author =  obj.author || 'x in (eczn, deswan)'
+	// obj.author =  obj.author || 'x in (eczn, deswan)'
 
 	// 过滤 
 	obj.tags = obj.tags.split(',').map(e => e.trim()).filter(e => e);
@@ -17,7 +17,7 @@ module.exports = function beauty(obj) {
 	// id = md5(title)
 	obj.id = md5(obj.title);
 	
-	obj.time = new Date(obj.time) 
+	obj.time = new Date(obj.time || obj.date); 
 	
 
 	return obj;
