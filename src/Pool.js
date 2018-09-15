@@ -33,7 +33,7 @@ class Pool extends EventEmitter {
         
         this.watcher.on('unlink', e => this.unlinkDaily(slashNormalize(e))); 
         this.watcher.on('add', e => this.addDaily(slashNormalize(e))); 
-        this.watcher.on('change', _ => this.emit('change')); 
+        this.watcher.on('change', _ => setTimeout(() => this.emit('change'))); 
     }
     
     /**
