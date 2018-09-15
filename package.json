@@ -1,6 +1,6 @@
 {
   "name": "md.daily",
-  "version": "2.0.4",
+  "version": "2.1.0",
   "description": "for daily store",
   "main": "src/index.js",
   "scripts": {

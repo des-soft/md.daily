@@ -42,7 +42,7 @@ class Pool extends EventEmitter {
     initDailyMap() {
         this.dailyMap = this.FILES.reduce((mapper, file) => {
             const daily = new Daily(file); 
-            // daily.beginWatch(); 
+            daily.beginWatch(); 
 
             mapper[daily.file_path] = daily; 
             
@@ -72,8 +72,8 @@ class Pool extends EventEmitter {
      * @returns { this } 
      */
     unlinkDaily(file_path) {
-        const target = this.dailyMap[e]; 
-        delete this.dailyMap[e]; 
+        const target = this.dailyMap[file_path]; 
+        delete this.dailyMap[file_path]; 
 
         this.emit('unlink', target); 
 
