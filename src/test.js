@@ -1,6 +1,6 @@
 const path = require('path')
     , README_FILE = path.join(__dirname, 'README.md')
-    , Daily = require('./index')
+    , Daily = require('./Daily')
 
 let readme = new Daily(README_FILE); 
 

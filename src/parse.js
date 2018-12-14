@@ -66,7 +66,7 @@ function getMetaFrom(head){
         try {
             meta = selector(meta_text); 
         } catch (err) {
-            console.log('Meta Parse Error'); 
+            console.log('md.daily: Meta Parse Error, info:', meta_text); 
             console.log(err); 
         }
 
