@@ -1,8 +1,9 @@
 {
   "name": "md.daily",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "for daily store",
-  "main": "src/index.js",
+  "main": "dist/main.js",
+  "types": "dist/typings/index.d.ts",
   "scripts": {
     "test": "node src/test.js "
   },
@@ -22,9 +23,10 @@
   },
   "homepage": "https://github.com/des-soft/md.daily#readme",
   "dependencies": {
-    "chokidar": "^2.0.3",
-    "glob": "^7.1.2",
-    "md5": "^2.2.1",
     "then-fs": "^2.0.0"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.2",
+    "typescript": "^3.1.6"
   }
 }
